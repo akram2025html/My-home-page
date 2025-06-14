@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akram Business Website</title>
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    overflow-x: hidden;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+  }
+
+  /* Hero section */
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: #fff;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .cta-button:hover {
+    background: #ffd700;
+    transform: scale(1.05);
+  }
+
+  /* Animated background particles or shapes */
+  .background-shapes {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    background: rgba(255, 255, 255, 0.2);
+    animation: floatUp 20s linear infinite;
+  }
+
+  /* Create multiple shapes with different sizes and positions dynamically via JS */
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1);
+      opacity: 0;
+    }
+  }
+
+  /* Footer */
+  footer {
+    background: rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1em;
+    margin-top: 50px;
+  }
+
+  /* Animations for text */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Background animated shapes -->
+<div class="background-shapes" id="shapesContainer"></div>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <h1>Welcome to Akram Solutions</h1>
+  <p>Your trusted partner in innovative business solutions. We bring your ideas to life with expertise and passion.</p>
+  <button class="cta-button" onclick="scrollToSection('#about')">Learn More</button>
+</section>
+
+<!-- About Section -->
+<section id="about" style="padding: 100px 20px; text-align: center; background: rgba(255,255,255,0.1);">
+  <h2 style="font-size: 2.5em; margin-bottom: 20px;">About Us</h2>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em;">
+    Akram Solutions is dedicated to providing top-quality services to help your business grow. Our team of experts specializes in delivering innovative solutions tailored to your needs.
+  </p>
+</section>
+
+<!-- Services Section -->
+<section id="services" style="padding: 100px 20px; text-align: center;">
+  <h2 style="font-size: 2.5em; margin-bottom: 20px;">Our Services</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; width: 250px;">
+      <h3>Consulting</h3>
+      <p>Expert advice to take your business to the next level.</p>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; width: 250px;">
+      <h3>Development</h3>
+      <p>Custom software and web development tailored to your needs.</p>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; width: 250px;">
+      <h3>Design</h3>
+      <p>Creative branding and UI/UX solutions for your business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="padding: 100px 20px; text-align: center; background: rgba(255,255,255,0.1);">
+  <h2 style="font-size: 2.5em; margin-bottom: 20px;">Contact Us</h2>
+  <p style="max-width: 600px; margin: 0 auto; font-size: 1.2em;">
+    Get in touch for collaborations, inquiries, or support. Email: info@akramismail8.com
+  </p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>All rights reserved by Akram.</p>
+</footer>
+
+<script>
+  // Generate animated background shapes
+  const shapesContainer = document.getElementById('shapesContainer');
+
+  function createShape() {
+    const shape = document.createElement('div');
+    shape.className = 'shape';
+
+    const size = Math.random() * 60 + 20; // 20px to 80px
+    shape.style.width = size + 'px';
+    shape.style.height = size + 'px';
+
+    shape.style.top = Math.random() * 100 + '%';
+    shape.style.left = Math.random() * 100 + '%';
+
+    shape.style.backgroundColor = `rgba(255,255,255,${Math.random() * 0.3 + 0.2})`;
+
+    // Random animation duration
+    shape.style.animationDuration = (10 + Math.random() * 20) + 's';
+
+    // Optional: add delay for variation
+    shape.style.animationDelay = Math.random() * 10 + 's';
+
+    shapesContainer.appendChild(shape);
+
+    // Remove shape after animation ends to prevent DOM clutter
+    shape.addEventListener('animationend', () => {
+      shape.remove();
+    });
+  }
+
+  // Create multiple shapes
+  for (let i = 0; i < 20; i++) {
+    createShape();
+  }
+
+  // Smooth scroll for buttons
+  function scrollToSection(id) {
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
